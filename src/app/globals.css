@@ -1,0 +1,129 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-space-grotesk);
+  --font-pixel: var(--font-press-start);
+  
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-tertiary: var(--tertiary);
+  --color-tertiary-foreground: var(--tertiary-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  
+  --color-neon-blue: #00ffff;
+  --color-neon-pink: #ff51fa;
+  --color-neon-green: #8eff71;
+  
+  --radius-none: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #0e0e13;
+  --primary: #00ffff;
+  --primary-foreground: #0e0e13;
+  --secondary: #ff51fa;
+  --secondary-foreground: #0e0e13;
+  --tertiary: #8eff71;
+  --tertiary-foreground: #0e0e13;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --accent: #f4f4f5;
+  --accent-foreground: #18181b;
+  --destructive: #ef4444;
+  --destructive-foreground: #fafafa;
+  --border: #e4e4e7;
+  --input: #e4e4e7;
+  --ring: #00ffff;
+  --radius: 0px;
+}
+
+.dark {
+  --background: #0e0e13;
+  --foreground: #f8f5fd;
+  --card: #19191f;
+  --card-foreground: #f8f5fd;
+  --popover: #19191f;
+  --popover-foreground: #f8f5fd;
+  --primary: #00ffff;
+  --primary-foreground: #0e0e13;
+  --secondary: #ff51fa;
+  --secondary-foreground: #0e0e13;
+  --tertiary: #8eff71;
+  --tertiary-foreground: #0e0e13;
+  --muted: #25252c;
+  --muted-foreground: #acaab1;
+  --accent: #25252c;
+  --accent-foreground: #f8f5fd;
+  --destructive: #ff716c;
+  --destructive-foreground: #0e0e13;
+  --border: #48474d;
+  --input: #48474d;
+  --ring: #00ffff;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    image-rendering: pixelated;
+  }
+  
+  /* Regra 9: Cursor pointer em elementos clicáveis */
+  button, a, [role="button"], input[type="submit"], input[type="button"] {
+    cursor: pointer !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .pixel-border {
+    border: 4px solid currentColor;
+    box-shadow: 
+      0 -4px 0 -2px #000,
+      0 4px 0 -2px #000,
+      -4px 0 0 -2px #000,
+      4px 0 0 -2px #000;
+  }
+
+  .neon-glow-blue {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.3);
+  }
+
+  .neon-glow-pink {
+    box-shadow: 0 0 10px rgba(255, 81, 250, 0.5), 0 0 20px rgba(255, 81, 250, 0.3);
+  }
+
+  .text-neon-blue {
+    color: #00ffff;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
+  }
+
+  .text-neon-pink {
+    color: #ff51fa;
+    text-shadow: 0 0 5px rgba(255, 81, 250, 0.7);
+  }
+}
