@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { Star, FlaskConical, Coins } from "lucide-react";
 import { useGameInteraction } from "../hooks/useGameInteraction";
 
 export const HeroSection = () => {
@@ -49,22 +50,33 @@ export const HeroSection = () => {
         </div>
       </motion.div>
 
-      {/* Decorative Arcade Elements */}
-      <div className="absolute bottom-10 left-10 hidden lg:block opacity-20">
-         <div className="w-20 h-20 border-4 border-neon-blue rounded-full flex items-center justify-center">
-            <div className="w-8 h-8 bg-neon-blue rounded-full" />
-         </div>
-         <p className="font-pixel text-[8px] mt-2 text-center">JOYSTICK A</p>
-      </div>
-      <div className="absolute bottom-10 right-10 hidden lg:block opacity-20 text-right">
-         <div className="grid grid-cols-2 gap-2">
-            <div className="w-8 h-8 bg-neon-pink" />
-            <div className="w-8 h-8 bg-neon-blue" />
-            <div className="w-8 h-8 bg-neon-green" />
-            <div className="w-8 h-8 bg-yellow-400" />
-         </div>
-         <p className="font-pixel text-[8px] mt-2">CONTROLS</p>
-      </div>
+      {/* Decorative RPG Elements */}
+      <motion.div 
+        animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }} 
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-1/4 left-[10%] opacity-40 text-yellow-400 flex flex-col items-center"
+      >
+        <Star size={40} className="fill-yellow-400/50 pixel-border border-yellow-400 p-1" />
+        <span className="font-pixel text-[8px] mt-2">STAR</span>
+      </motion.div>
+
+      <motion.div 
+        animate={{ y: [0, 20, 0], rotate: [0, -10, 0] }} 
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        className="absolute bottom-1/4 right-[10%] opacity-40 text-neon-green flex flex-col items-center"
+      >
+        <FlaskConical size={40} className="fill-neon-green/30 pixel-border border-neon-green p-1" />
+        <span className="font-pixel text-[8px] mt-2">POTION</span>
+      </motion.div>
+
+      <motion.div 
+        animate={{ y: [0, -20, 0] }} 
+        transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+        className="absolute bottom-1/3 left-[20%] opacity-40 text-orange-400 flex flex-col items-center"
+      >
+        <Coins size={36} className="pixel-border border-orange-400 p-1" />
+        <span className="font-pixel text-[8px] mt-2">COIN</span>
+      </motion.div>
     </section>
   );
 };
