@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Star, FlaskConical, Coins } from "lucide-react";
+import { PixelStar, PixelPotion, PixelCoin } from "./PixelIcons";
 import { useGameInteraction } from "../hooks/useGameInteraction";
 
 export const HeroSection = () => {
@@ -51,31 +51,45 @@ export const HeroSection = () => {
       </motion.div>
 
       {/* Decorative RPG Elements */}
-      <motion.div 
-        animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }} 
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/4 left-[10%] opacity-40 text-yellow-400 flex flex-col items-center"
+
+      {/* Estrela — topo esquerda */}
+      <motion.div
+        animate={{ y: [0, -14, 0], rotate: [0, 6, -6, 0] }}
+        transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-[18%] left-[8%] hidden lg:flex flex-col items-center gap-2 opacity-70"
       >
-        <Star size={40} className="fill-yellow-400/50 pixel-border border-yellow-400 p-1" />
-        <span className="font-pixel text-[8px] mt-2">STAR</span>
+        <PixelStar size={52} className="text-yellow-400" />
+        <span className="font-pixel text-[8px] text-yellow-400">STAR ×1</span>
       </motion.div>
 
-      <motion.div 
-        animate={{ y: [0, 20, 0], rotate: [0, -10, 0] }} 
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute bottom-1/4 right-[10%] opacity-40 text-neon-green flex flex-col items-center"
+      {/* Moeda — topo direita */}
+      <motion.div
+        animate={{ y: [0, -18, 0] }}
+        transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut", delay: 0.7 }}
+        className="absolute top-[22%] right-[8%] hidden lg:flex flex-col items-center gap-2 opacity-70"
       >
-        <FlaskConical size={40} className="fill-neon-green/30 pixel-border border-neon-green p-1" />
-        <span className="font-pixel text-[8px] mt-2">POTION</span>
+        <PixelCoin size={52} className="text-orange-400" />
+        <span className="font-pixel text-[8px] text-orange-400">COIN ×5</span>
       </motion.div>
 
-      <motion.div 
-        animate={{ y: [0, -20, 0] }} 
-        transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-        className="absolute bottom-1/3 left-[20%] opacity-40 text-orange-400 flex flex-col items-center"
+      {/* Poção — baixo esquerda */}
+      <motion.div
+        animate={{ y: [0, 16, 0], rotate: [0, -8, 8, 0] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
+        className="absolute bottom-[18%] left-[12%] hidden lg:flex flex-col items-center gap-2 opacity-70"
       >
-        <Coins size={36} className="pixel-border border-orange-400 p-1" />
-        <span className="font-pixel text-[8px] mt-2">COIN</span>
+        <PixelPotion size={52} className="text-blue-400" />
+        <span className="font-pixel text-[8px] text-blue-400">POTION</span>
+      </motion.div>
+
+      {/* Estrela extra — baixo direita */}
+      <motion.div
+        animate={{ y: [0, -12, 0], scale: [1, 1.1, 1] }}
+        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        className="absolute bottom-[20%] right-[12%] hidden lg:flex flex-col items-center gap-2 opacity-70"
+      >
+        <PixelCoin size={44} className="text-yellow-300" />
+        <span className="font-pixel text-[8px] text-yellow-300">COIN ×3</span>
       </motion.div>
     </section>
   );
