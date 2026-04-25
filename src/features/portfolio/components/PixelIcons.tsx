@@ -1,25 +1,56 @@
 import React from "react";
 
-export const PixelStar = ({ className = "", size = 40 }: { className?: string, size?: number }) => {
+export const PixelStar = ({ className = "", size = 40 }: { className?: string; size?: number }) => {
+  // Representação pixel a pixel de uma estrela de 5 pontas (grid 16x16)
+  // 0 = transparente | 1 = contorno preto | 2 = amarelo claro (topo) | 3 = amarelo médio | 4 = amarelo escuro (sombra) | 5 = branco (brilho)
+  const grid: number[][] = [
+    [0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,1,2,2,1,0,0,0,0,0,0],
+    [0,0,0,0,0,0,1,2,5,1,0,0,0,0,0,0],
+    [0,0,0,0,0,0,1,2,2,1,0,0,0,0,0,0],
+    [1,1,1,1,1,1,1,2,2,3,1,1,1,1,1,1],
+    [1,2,2,2,2,2,2,5,2,3,4,4,4,4,4,1],
+    [0,1,2,2,2,2,2,2,3,4,4,4,4,4,1,0],
+    [0,0,1,2,2,2,2,3,4,4,4,4,4,1,0,0],
+    [0,0,0,1,2,2,3,4,4,4,4,4,1,0,0,0],
+    [0,1,1,1,1,2,3,4,4,4,1,1,1,1,1,0],
+    [1,2,2,2,1,1,3,4,1,1,4,4,4,4,4,1],
+    [1,2,2,1,0,1,3,4,1,0,1,4,4,4,4,1],
+    [1,2,1,0,0,0,1,1,0,0,0,1,4,4,4,1],
+    [1,1,0,0,0,0,0,0,0,0,0,0,1,4,4,1],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  ];
+
+  const palette: Record<number, string> = {
+    1: "#1a1a1a",
+    2: "#fcd34d",
+    3: "#f59e0b",
+    4: "#b45309",
+    5: "#fffbeb",
+  };
+
   return (
-    <svg 
-      width={size} 
-      height={size} 
-      viewBox="0 0 16 16" 
-      fill="none" 
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 16 16"
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
-      style={{ imageRendering: "pixelated", filter: "drop-shadow(0 0 4px currentColor)" }}
+      style={{ imageRendering: "pixelated", filter: "drop-shadow(0 0 5px #fbbf24)" }}
     >
-      <path d="M7 1h2v2h2v2h2v2h2v2h-2v2h-2v1h-1v2H7v-2H6v-1H4v-2H2V9H0V7h2V5h2V3h2V1h1z" fill="#000" />
-      <path d="M8 2h1v2h2v2h2v1H8V2z" fill="#fcd34d" />
-      <path d="M7 2H6v2H4v2H2v1h5V2z" fill="#fbbf24" />
-      <path d="M8 7h5v2h-2v2h-2v1H8V7z" fill="#f59e0b" />
-      <path d="M7 7H2v2h2v2h2v1h1V7z" fill="#d97706" />
-      <rect x="7" y="5" width="2" height="2" fill="#fff" />
+      {grid.map((row, y) =>
+        row.map((cell, x) =>
+          cell !== 0 ? (
+            <rect key={`${x}-${y}`} x={x} y={y} width={1} height={1} fill={palette[cell]} />
+          ) : null
+        )
+      )}
     </svg>
   );
 };
+
 
 export const PixelPotion = ({ className = "", size = 40 }: { className?: string, size?: number }) => {
   return (

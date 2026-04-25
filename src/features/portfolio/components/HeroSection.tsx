@@ -59,7 +59,7 @@ export const HeroSection = () => {
         className="absolute top-[18%] left-[8%] hidden lg:flex flex-col items-center gap-2 opacity-70"
       >
         <PixelStar size={52} className="text-yellow-400" />
-        <span className="font-pixel text-[8px] text-yellow-400">STAR ×1</span>
+        <span className="font-pixel text-[8px] text-yellow-400"></span>
       </motion.div>
 
       {/* Moeda — topo direita */}
@@ -69,7 +69,7 @@ export const HeroSection = () => {
         className="absolute top-[22%] right-[8%] hidden lg:flex flex-col items-center gap-2 opacity-70"
       >
         <PixelCoin size={52} className="text-orange-400" />
-        <span className="font-pixel text-[8px] text-orange-400">COIN ×5</span>
+        <span className="font-pixel text-[8px] text-orange-400">×5</span>
       </motion.div>
 
       {/* Poção — baixo esquerda */}
@@ -79,7 +79,7 @@ export const HeroSection = () => {
         className="absolute bottom-[18%] left-[12%] hidden lg:flex flex-col items-center gap-2 opacity-70"
       >
         <PixelPotion size={52} className="text-blue-400" />
-        <span className="font-pixel text-[8px] text-blue-400">POTION</span>
+        <span className="font-pixel text-[8px] text-blue-400"></span>
       </motion.div>
 
       {/* Estrela extra — baixo direita */}
@@ -89,7 +89,7 @@ export const HeroSection = () => {
         className="absolute bottom-[20%] right-[12%] hidden lg:flex flex-col items-center gap-2 opacity-70"
       >
         <PixelCoin size={44} className="text-yellow-300" />
-        <span className="font-pixel text-[8px] text-yellow-300">COIN ×3</span>
+        <span className="font-pixel text-[8px] text-yellow-300">×3</span>
       </motion.div>
     </section>
   );
