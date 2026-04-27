@@ -20,13 +20,7 @@ const pressStart2P = Press_Start_2P({
 
 export const metadata: Metadata = {
   title: "Gabriel Souza | Swift & Web Developer",
-  description: "Portfolio pixel art de Gabriel Souza, desenvolvedor Swift e Web.",
-  icons: {
-    icon: [
-      { url: "/developer-portfolio-pixel-art/favicon.svg", type: "image/svg+xml" },
-      { url: "/developer-portfolio-pixel-art/favicon.ico", sizes: "any" },
-    ],
-  },
+  description: "Portfolio de Gabriel Souza, desenvolvedor Swift e Web.",
 };
 
 export default function RootLayout({
