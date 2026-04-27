@@ -43,9 +43,9 @@ export const usePortfolioData = () => {
 
   const [skills] = useState<Skill[]>([
     { name: "Swift", level: 95, icon: "swift" },
-    { name: "React", level: 85, icon: "react" },
-    { name: "TypeScript", level: 90, icon: "ts" },
-    { name: "HTML5/CSS3", level: 98, icon: "html" },
+    { name: "React", level: 80, icon: "react" },
+    { name: "TypeScript", level: 80, icon: "ts" },
+    { name: "HTML5/CSS3", level: 85, icon: "html" },
     { name: "Next.js", level: 80, icon: "next" },
   ]);
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { PixelCard } from "./PixelCard";
-import { Smartphone, Globe, Gamepad2, Code2 } from "lucide-react";
+import { Smartphone, Globe, Brush, Code2} from "lucide-react";
 
 export const ServicesSection = () => {
   const services = [
@@ -19,15 +19,9 @@ export const ServicesSection = () => {
     {
       title: "UI/UX Design",
       description: "Interfaces intuitivas e sistemas de design escaláveis com foco no usuário.",
-      icon: <Gamepad2 className="w-8 h-8 text-neon-green" />,
+      icon: <Brush className="w-8 h-8 text-neon-green" />,
       color: "green" as const,
-    },
-    {
-      title: "Backend Solutions",
-      description: "APIs robustas e integração de serviços em nuvem para sustentar sua aplicação.",
-      icon: <Code2 className="w-8 h-8 text-yellow-400" />,
-      color: "blue" as const,
-    },
+    }
   ];
 
   return (
@@ -39,7 +33,7 @@ export const ServicesSection = () => {
         <div className="w-24 h-1 bg-neon-green mx-auto" />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {services.map((service, index) => (
           <PixelCard 
             key={index}

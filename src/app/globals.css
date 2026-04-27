@@ -117,6 +117,10 @@
     box-shadow: 0 0 10px rgba(255, 81, 250, 0.5), 0 0 20px rgba(255, 81, 250, 0.3);
   }
 
+  .neon-glow-green {
+    box-shadow: 0 0 10px rgba(142, 255, 113, 0.5), 0 0 20px rgba(142, 255, 113, 0.3);
+  }
+
   .text-neon-blue {
     color: #00ffff;
     text-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
@@ -125,5 +129,22 @@
   .text-neon-pink {
     color: #ff51fa;
     text-shadow: 0 0 5px rgba(255, 81, 250, 0.7);
+  }
+
+  .text-neon-green {
+    color: #8eff71;
+    text-shadow: 0 0 5px rgba(142, 255, 113, 0.7);
+  }
+
+  .border-neon-blue {
+    border-color: #00ffff;
+  }
+
+  .border-neon-pink {
+    border-color: #ff51fa;
+  }
+
+  .border-neon-green {
+    border-color: #8eff71;
   }
 }
